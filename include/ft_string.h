@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 02:00:44 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 03:53:56 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_strcmp(const char *str1, const char *str2);
 char	*ft_strcpy(char *dest, const char *src);
 size_t	ft_strcspn(const char *str, const char *reject);
 char	*ft_strdup(const char *str);
-bool    ft_strends(const char *str, const char *suffix);
+bool	ft_strends(const char *str, const char *suffix);
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
 char	*ft_strjoin(const char *str1, const char *str2);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
@@ -51,7 +51,7 @@ size_t	ft_strnlen(const char *str, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char	*ft_strrchr(const char *str, char c);
 size_t	ft_strspn(const char *str, const char *accept);
-bool    ft_strstarts(const char *str, const char *prefix);
+bool	ft_strstarts(const char *str, const char *prefix);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strtrim(const char *str, const char *set);
 char	*ft_substr(const char *str, unsigned int start, size_t n);

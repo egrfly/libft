@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 02:17:28 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 03:54:51 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdbool.h>
 # include <stdlib.h>
+
+typedef void				(*t_action_func)(void *);
+typedef void				*(*t_transformation_func)(void *);
 
 typedef struct s_list_node	t_list_node;
 typedef struct s_list		t_list;
