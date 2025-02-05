@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 03:53:56 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 23:37:42 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strndup(const char *str, size_t n);
 size_t	ft_strnlen(const char *str, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char	*ft_strrange(const char *str, unsigned int start, unsigned int end);
 char	*ft_strrchr(const char *str, char c);
 size_t	ft_strspn(const char *str, const char *accept);
 bool	ft_strstarts(const char *str, const char *prefix);
