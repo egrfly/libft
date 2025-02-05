@@ -6,14 +6,14 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:15 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:32:27 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 02:16:52 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 #include "ft_list.h"
 
-bool	ft_list_appendnode(t_list *list, t_list_node *node)
+void	ft_list_appendnode(t_list *list, t_list_node *node)
 {
 	if (!list->first)
 		list->first = node;
@@ -24,5 +24,4 @@ bool	ft_list_appendnode(t_list *list, t_list_node *node)
 	}
 	list->last = node;
 	list->size++;
-	return (true);
 }

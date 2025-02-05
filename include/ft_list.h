@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:36:27 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 02:17:28 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ struct s_list
 };
 
 bool		ft_list_append(t_list *list, void *value);
-bool		ft_list_appendnode(t_list *list, t_list_node *node);
+void		ft_list_appendnode(t_list *list, t_list_node *node);
 bool		ft_list_prepend(t_list *list, void *value);
-bool		ft_list_prependnode(t_list *list, t_list_node *node);
+void		ft_list_prependnode(t_list *list, t_list_node *node);
 void		ft_list_clear(t_list *list, void (*del)(void *));
 void		ft_list_delnode(t_list_node *node, void (*del)(void *));
 void		ft_list_destroy(t_list *list, void (*del)(void *));

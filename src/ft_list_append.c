@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:15 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:33:23 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 02:17:44 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ bool	ft_list_append(t_list *list, void *value)
 	new_node = ft_list_newnode(value);
 	if (!new_node)
 		return (false);
-	return (ft_list_appendnode(list, new_node));
+	ft_list_appendnode(list, new_node);
+	return (true);
 }
