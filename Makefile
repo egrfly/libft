@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2024/07/03 00:30:58 by emflynn          ###   ########.fr        #
+#    Updated: 2025/02/05 00:36:50 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ OBJ_DIR :=		./obj
 SRC_FILES :=	ft_abs.c \
 				ft_all.c \
 				ft_any.c \
-				ft_atoi_strict.c \
 				ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -38,17 +37,17 @@ SRC_FILES :=	ft_abs.c \
 				ft_isxdigit.c \
 				ft_itoa.c \
 				ft_list_append.c \
+				ft_list_appendnode.c \
 				ft_list_clear.c \
 				ft_list_delnode.c \
 				ft_list_destroy.c \
-				ft_list_first.c \
 				ft_list_init.c \
 				ft_list_iter.c \
-				ft_list_last.c \
 				ft_list_map.c \
 				ft_list_newnode.c \
 				ft_list_prepend.c \
-				ft_list_remove.c \
+				ft_list_prependnode.c \
+				ft_list_removenode.c \
 				ft_list_size.c \
 				ft_max.c \
 				ft_memccpy.c \

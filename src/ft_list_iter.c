@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:08:39 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 23:47:12 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 00:22:30 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_list_iter(t_list *list, void (*f)(void *))
 {
-	t_node	*current_node;
+	t_list_node	*current_node;
 
-	current_node = list->head.next;
-	while (current_node != &list->tail)
+	current_node = list->first;
+	while (current_node)
 	{
-		f(current_node->content);
+		f(current_node->value);
 		current_node = current_node->next;
 	}
 }

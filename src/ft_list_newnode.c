@@ -6,22 +6,21 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:37:56 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 23:55:11 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 00:17:52 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_list.h"
+#include "ft_stdlib.h"
 
-t_node	*ft_list_newnode(void *content)
+t_list_node	*ft_list_newnode(void *value)
 {
-	t_node	*node;
+	t_list_node	*node;
 
-	node = malloc(sizeof(t_node));
+	node = ft_calloc(sizeof(t_list_node), 1);
 	if (!node)
 		return (NULL);
-	node->content = content;
-	node->prev = NULL;
-	node->next = NULL;
+	node->value = value;
 	return (node);
 }

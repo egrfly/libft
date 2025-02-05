@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list_removenode.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 23:52:26 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 23:40:50 by emflynn          ###   ########.fr       */
+/*   Created: 2023/09/23 23:55:15 by emflynn           #+#    #+#             */
+/*   Updated: 2025/02/05 00:36:08 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_list.h"
 
-t_node	*ft_list_last(const t_list *list)
+void	ft_list_removenode(t_list *list, t_list_node *node)
 {
-	if (list->tail.prev != &list->head)
-		return (list->tail.prev);
+	if (node->prev)
+		node->prev->next = node->next;
 	else
-		return (NULL);
+		list->first = node->next;
+	if (node->next)
+		node->next->prev = node->prev;
+	else
+		list->last = node->prev;
+	list->size--;
 }

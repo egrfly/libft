@@ -6,17 +6,19 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:44:11 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 23:57:45 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 00:33:46 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include "ft_list.h"
 
-void	ft_list_prepend(t_list *list, t_node *node)
+bool	ft_list_prepend(t_list *list, void *value)
 {
-	node->prev = &list->head;
-	node->next = list->head.next;
-	list->head.next->prev = node;
-	list->head.next = node;
-	list->size++;
+	t_list_node	*new_node;
+
+	new_node = ft_list_newnode(value);
+	if (!new_node)
+		return (false);
+	return (ft_list_prependnode(list, new_node));
 }

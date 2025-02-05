@@ -6,15 +6,15 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:02:00 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 23:27:26 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/05 00:00:54 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_list.h"
 
-void	ft_list_delnode(t_node *node, void (*del)(void *))
+void	ft_list_delnode(t_list_node *node, void (*del)(void *))
 {
-	del(node->content);
+	del(node->value);
 	free(node);
 }
