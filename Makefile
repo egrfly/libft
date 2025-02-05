@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/02/05 00:36:50 by emflynn          ###   ########.fr        #
+#    Updated: 2025/02/05 02:01:10 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_strcpy.c \
 				ft_strcspn.c \
 				ft_strdup.c \
+				ft_strends.c \
 				ft_striteri.c \
 				ft_strjoin.c \
 				ft_strlcat.c \
@@ -89,6 +90,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_strspn.c \
+				ft_strstarts.c \
 				ft_strstr.c \
 				ft_strtrim.c \
 				ft_substr.c \
