@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_delnode.c                                  :+:      :+:    :+:   */
+/*   ft_binary_tree_init.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 00:02:00 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/18 16:15:01 by emflynn          ###   ########.fr       */
+/*   Created: 2023/09/23 23:37:56 by emflynn           #+#    #+#             */
+/*   Updated: 2025/02/13 02:50:58 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_list.h"
+#include "ft_binary_tree.h"
+#include "ft_stdlib.h"
 
-void	ft_list_delnode(t_list_node *node, void (*del)(void *))
+t_binary_tree	*ft_binary_tree_init(void)
 {
-	if (del)
-		del(node->value);
-	free(node);
+	t_binary_tree	*binary_tree;
+
+	binary_tree = ft_calloc(sizeof(t_binary_tree), 1);
+	return (binary_tree);
 }
