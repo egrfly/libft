@@ -6,14 +6,40 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:53:17 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/18 00:00:22 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/21 09:32:52 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include <stdbool.h>
 #include "ft_ctype.h"
 #include "ft_defs.h"
 #include "ft_string.h"
+
+static bool	would_surpass_limit(int n, int next_digit, bool is_negative)
+{
+	int	n_cutoff;
+	int	next_digit_cutoff;
+
+	if (is_negative)
+	{
+		n_cutoff = INT_MIN / 10;
+		next_digit_cutoff = INT_MIN % 10;
+		if (next_digit_cutoff > 0)
+		{
+			next_digit_cutoff -= 10;
+			n_cutoff += 1;
+		}
+		n_cutoff = -n_cutoff;
+		next_digit_cutoff = -next_digit_cutoff;
+	}
+	else
+	{
+		n_cutoff = INT_MAX / 10;
+		next_digit_cutoff = INT_MAX % 10;
+	}
+	return (n > n_cutoff || (n == n_cutoff && next_digit > next_digit_cutoff));
+}
 
 bool	ft_atoi(const char *nstr, int *n)
 {
@@ -33,9 +59,9 @@ bool	ft_atoi(const char *nstr, int *n)
 	while (ft_isdigit(*nstr))
 	{
 		has_digits = true;
-		*n = *n * 10 + *nstr - '0';
-		if (*n != (*n - (*nstr - '0')) / 10)
+		if (would_surpass_limit(*n, *nstr - '0', multiplier == -1))
 			return (false);
+		*n = *n * 10 + *nstr - '0';
 		nstr++;
 	}
 	nstr += ft_strspn(nstr, WHITESPACE);
