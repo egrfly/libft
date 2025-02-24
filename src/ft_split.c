@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 09:58:10 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/03 00:32:37 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/24 18:36:18 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ static void	ft_assign_splits(char ***splits, const char *str, const char *set)
 		split_len = ft_strcspn(&str[i], set);
 		if (split_len > 0)
 		{
-			*splits[count] = ft_strndup(&str[i], split_len);
-			if (!*splits[count])
+			(*splits)[count] = ft_strndup(&str[i], split_len);
+			if (!(*splits)[count])
 			{
 				ft_split_destroy(splits);
 				return ;
@@ -54,7 +54,7 @@ static void	ft_assign_splits(char ***splits, const char *str, const char *set)
 		}
 		i += split_len + ft_strspn(&str[i + split_len], set);
 	}
-	*splits[count] = NULL;
+	(*splits)[count] = NULL;
 }
 
 char	**ft_split(const char *str, const char *set)
