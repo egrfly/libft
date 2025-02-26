@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/02/13 02:51:39 by emflynn          ###   ########.fr        #
+#    Updated: 2025/02/26 16:15:51 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_any.c \
 				ft_atoi.c \
 				ft_binary_tree_init.c \
+				ft_binary_tree_newnode.c \
 				ft_bzero.c \
 				ft_calloc.c \
 				ft_getline.c \
@@ -108,6 +109,7 @@ PRINTF_SRC_DIR :=	$(SRC_DIR)/ft_printf
 PRINTF_OBJ_DIR :=	$(OBJ_DIR)/ft_printf
 
 PRINTF_SRC_FILES :=	ft_printf.c	\
+					ft_dprintf.c \
 					conversion_char.c \
 					conversion_float.c \
 					conversion_hex.c \
