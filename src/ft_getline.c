@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 11:52:28 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 18:16:48 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:47:08 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*ft_extract_line_from_buffer(char *buffer)
 	char	*newline;
 
 	newline = ft_strchr(buffer, '\n');
-	line = ft_strndup(buffer, newline - buffer + 1);
+	line = ft_strndup(buffer, newline - buffer);
 	ft_strncpy(buffer, newline + 1, buffer + ft_strlen(buffer) - newline);
 	return (line);
 }
@@ -68,7 +68,7 @@ static void	ft_extend_line_from_fd(int fd, char **line, char *buffer)
 		newline = ft_strchr(buffer, '\n');
 		if (newline)
 		{
-			ft_extend_line_from_buffer(line, buffer, newline - buffer + 1);
+			ft_extend_line_from_buffer(line, buffer, newline - buffer);
 			ft_memmove(buffer, newline + 1, buffer + read_char_count - newline);
 			break ;
 		}
