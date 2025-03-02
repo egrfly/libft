@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/02/26 16:15:51 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/02 01:09:27 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_list_prependnode.c \
 				ft_list_removenode.c \
 				ft_list_size.c \
+				ft_list_splicenodes.c \
 				ft_max.c \
 				ft_memccpy.c \
 				ft_memchr.c \
@@ -157,27 +158,27 @@ ifeq ($(UNAME),Darwin)
 endif
 
 $(NAME):		$(OBJS) $(PRINTF_OBJS)
-				$(AR) $(ARFLAGS) $@ $^
+				@$(AR) $(ARFLAGS) $@ $^
 
 $(PRINTF_OBJ_DIR):
-						$(MKDIR) $@
+						@$(MKDIR) $@
 
 $(PRINTF_OBJ_DIR)/%.o:	$(PRINTF_SRC_DIR)/%.c | $(PRINTF_OBJ_DIR)
-						$(CC) $(CFLAGS) -c $< -o $@
+						@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
-				$(MKDIR) $@
+				@$(MKDIR) $@
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c | $(OBJ_DIR)
-				$(CC) $(CFLAGS) -c $< -o $@
+				@$(CC) $(CFLAGS) -c $< -o $@
 
 all:			$(NAME)
 
 clean:
-				$(RM) -R $(OBJ_DIR)
+				@$(RM) -R $(OBJ_DIR)
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean all
 

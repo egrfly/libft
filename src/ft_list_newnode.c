@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:37:56 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:17:52 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/01 20:55:16 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list_node	*ft_list_newnode(void *value)
 {
 	t_list_node	*node;
 
-	node = ft_calloc(sizeof(t_list_node), 1);
+	node = ft_calloc(1, sizeof(t_list_node));
 	if (!node)
 		return (NULL);
 	node->value = value;

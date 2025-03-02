@@ -6,10 +6,11 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:15 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:36:08 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/01 20:53:22 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "ft_list.h"
 
 void	ft_list_removenode(t_list *list, t_list_node *node)
@@ -23,4 +24,5 @@ void	ft_list_removenode(t_list *list, t_list_node *node)
 	else
 		list->last = node->prev;
 	list->size--;
+	node->parent = NULL;
 }

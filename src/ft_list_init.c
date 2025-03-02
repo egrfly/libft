@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:37:56 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/13 02:50:21 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/01 20:55:09 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ t_list	*ft_list_init(void)
 {
 	t_list	*list;
 
-	list = ft_calloc(sizeof(t_list), 1);
+	list = ft_calloc(1, sizeof(t_list));
 	return (list);
 }

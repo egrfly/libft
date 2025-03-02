@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/12 15:19:42 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/01 21:02:42 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ struct s_list_node
 	void		*value;
 	t_list_node	*prev;
 	t_list_node	*next;
+	t_list		*parent;
 };
 
 struct s_list
@@ -51,5 +52,7 @@ bool		ft_list_prepend(t_list *list, void *value);
 void		ft_list_prependnode(t_list *list, t_list_node *node);
 void		ft_list_removenode(t_list *list, t_list_node *node);
 size_t		ft_list_size(const t_list *list);
+void		ft_list_splicenodes(t_list_node *last_of_first_list,
+				t_list_node *first_of_second_list);
 
 #endif

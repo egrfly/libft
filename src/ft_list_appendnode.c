@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 23:55:15 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 02:16:52 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/01 20:51:41 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_list_appendnode(t_list *list, t_list_node *node)
 	}
 	list->last = node;
 	list->size++;
+	node->parent = list;
 }
