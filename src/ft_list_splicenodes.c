@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 21:00:44 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/01 21:08:56 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/05 16:26:42 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	ft_list_splicenodes(t_list_node *last_of_first_list,
 		current->parent = first_list;
 		current = current->next;
 	}
+	first_list->size += second_list->size;
 	free(second_list);
 }
