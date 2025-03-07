@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:12:38 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 00:23:41 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/07 08:30:34 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_list	*ft_list_map(const t_list *list, void *(*f)(void *),
 		new_node = ft_list_newnode(new_value);
 		if (!new_node)
 		{
-			del(new_value);
+			if (del)
+				del(new_value);
 			ft_list_destroy(new_list, del);
 			return (NULL);
 		}
