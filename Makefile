@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/02 01:09:27 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/07 09:16:35 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,11 +46,13 @@ SRC_FILES :=	ft_abs.c \
 				ft_list_init.c \
 				ft_list_iter.c \
 				ft_list_map.c \
+				ft_list_merge.c \
 				ft_list_newnode.c \
 				ft_list_pop.c \
 				ft_list_prepend.c \
 				ft_list_prependnode.c \
 				ft_list_removenode.c \
+				ft_list_shallowcopy.c \
 				ft_list_size.c \
 				ft_list_splicenodes.c \
 				ft_max.c \

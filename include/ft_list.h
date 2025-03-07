@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/01 21:02:42 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/07 09:14:33 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ t_list		*ft_list_init(void);
 void		ft_list_iter(t_list *list, void (*f)(void *));
 t_list		*ft_list_map(const t_list *list, void *(*f)(void *),
 				void (*del)(void *));
+void		ft_list_merge(t_list *first_list, t_list *second_list);
 t_list_node	*ft_list_newnode(void *value);
 void		*ft_list_pop(t_list *list);
 bool		ft_list_prepend(t_list *list, void *value);
 void		ft_list_prependnode(t_list *list, t_list_node *node);
 void		ft_list_removenode(t_list *list, t_list_node *node);
+t_list		*ft_list_shallowcopy(t_list *list);
 size_t		ft_list_size(const t_list *list);
 void		ft_list_splicenodes(t_list_node *last_of_first_list,
 				t_list_node *first_of_second_list);
