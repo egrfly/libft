@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:53:17 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 06:03:46 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 09:29:36 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,28 @@
 
 static bool	would_surpass_limit(int nbr, int next_digit, bool is_negative)
 {
-	int	n_cutoff;
+	int	nbr_cutoff;
 	int	next_digit_cutoff;
 
 	if (is_negative)
 	{
-		n_cutoff = INT_MIN / 10;
+		nbr_cutoff = INT_MIN / 10;
 		next_digit_cutoff = INT_MIN % 10;
 		if (next_digit_cutoff > 0)
 		{
 			next_digit_cutoff -= 10;
-			n_cutoff += 1;
+			nbr_cutoff += 1;
 		}
-		n_cutoff = -n_cutoff;
+		nbr_cutoff = -nbr_cutoff;
 		next_digit_cutoff = -next_digit_cutoff;
 	}
 	else
 	{
-		n_cutoff = INT_MAX / 10;
+		nbr_cutoff = INT_MAX / 10;
 		next_digit_cutoff = INT_MAX % 10;
 	}
-	return (nbr > n_cutoff || (nbr == n_cutoff && next_digit > next_digit_cutoff));
+	return (nbr > nbr_cutoff
+		|| (nbr == nbr_cutoff && next_digit > next_digit_cutoff));
 }
 
 bool	ft_strntoi(const char *nbr_str, int *nbr, size_t n)
