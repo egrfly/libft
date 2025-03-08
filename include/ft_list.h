@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/07 09:14:33 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 03:25:52 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void		ft_list_clear(t_list *list, void (*del)(void *));
 void		ft_list_delnode(t_list_node *node, void (*del)(void *));
 void		ft_list_destroy(t_list *list, void (*del)(void *));
 t_list		*ft_list_init(void);
+bool		ft_list_insert(t_list *list, unsigned int index,
+				void *value);
+bool		ft_list_insertnode(t_list *list, unsigned int index,
+				t_list_node *node);
 void		ft_list_iter(t_list *list, void (*f)(void *));
 t_list		*ft_list_map(const t_list *list, void *(*f)(void *),
 				void (*del)(void *));
