@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnall.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 23:41:47 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 06:01:52 by emflynn          ###   ########.fr       */
+/*   Created: 2023/12/06 23:09:28 by emflynn           #+#    #+#             */
+/*   Updated: 2025/03/08 06:14:40 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <stdlib.h>
-#include "ft_stdlib.h"
 
-size_t	ft_nbrlen(unsigned long long nbr, unsigned int base)
+bool	ft_strnall(const char *str, bool (*f)(char), size_t n)
 {
-	unsigned long long	quotient;
+	size_t	i;
 
-	quotient = nbr / base;
-	if (quotient)
-		return (ft_nbrlen(quotient, base) + 1);
-	else
-		return (1);
+	i = 0;
+	while (i < n && str[i])
+	{
+		if (!f(str[i]))
+			return (false);
+		i++;
+	}
+	return (true);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itostr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 10:57:39 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 18:20:17 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 06:00:46 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,43 @@
 #include "ft_stdlib.h"
 #include "ft_string.h"
 
-static void	ft_putnbr_to_buffer(char *buffer, char *sign, unsigned int n)
+static void	ft_putnbr_to_buffer(char *buffer, char *sign, unsigned int nbr)
 {
 	unsigned int	sign_len;
-	unsigned int	n_len;
+	unsigned int	nbr_len;
 
 	ft_strcpy(buffer, sign);
 	sign_len = ft_strlen(sign);
-	n_len = ft_nbrlen(n, 10);
-	buffer[sign_len + n_len] = '\0';
-	while (n_len > 0)
+	nbr_len = ft_nbrlen(nbr, 10);
+	buffer[sign_len + nbr_len] = '\0';
+	while (nbr_len > 0)
 	{
-		n_len--;
-		buffer[sign_len + n_len] = n % 10 + '0';
-		n /= 10;
+		nbr_len--;
+		buffer[sign_len + nbr_len] = nbr % 10 + '0';
+		nbr /= 10;
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itostr(int nbr)
 {
 	char			*sign;
-	unsigned int	unsigned_n;
-	char			*str_n;
+	unsigned int	unsigned_nbr;
+	char			*nbr_str;
 
-	if (n < 0)
+	if (nbr < 0)
 	{
 		sign = "-";
-		unsigned_n = -n;
+		unsigned_nbr = -nbr;
 	}
 	else
 	{
 		sign = "";
-		unsigned_n = n;
+		unsigned_nbr = nbr;
 	}
-	str_n = malloc(sizeof(char)
-			* (ft_strlen(sign) + ft_nbrlen(unsigned_n, 10) + 1));
-	if (!str_n)
+	nbr_str = malloc(sizeof(char)
+			* (ft_strlen(sign) + ft_nbrlen(unsigned_nbr, 10) + 1));
+	if (!nbr_str)
 		return (NULL);
-	ft_putnbr_to_buffer(str_n, sign, unsigned_n);
-	return (str_n);
+	ft_putnbr_to_buffer(nbr_str, sign, unsigned_nbr);
+	return (nbr_str);
 }

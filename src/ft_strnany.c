@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_all.c                                           :+:      :+:    :+:   */
+/*   ft_strnany.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 23:09:28 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 16:20:04 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 06:13:22 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <stdlib.h>
 
-bool	ft_all(const char *str, bool (*f)(char))
+bool	ft_strnany(const char *str, bool (*f)(char), size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (i < n && str[i])
 	{
-		if (!f(str[i]))
-			return (false);
+		if (f(str[i]))
+			return (true);
 		i++;
 	}
-	return (true);
+	return (false);
 }

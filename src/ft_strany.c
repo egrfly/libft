@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_any.c                                           :+:      :+:    :+:   */
+/*   ft_strany.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 23:09:28 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 16:21:22 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 06:13:46 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <stdlib.h>
 
-bool	ft_any(const char *str, bool (*f)(char))
+bool	ft_strany(const char *str, bool (*f)(char))
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/05 23:37:42 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 06:15:24 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <stdbool.h>
 # include <stdlib.h>
 
-bool	ft_all(const char *str, bool (*f)(char));
-bool	ft_any(const char *str, bool (*f)(char));
+bool	ft_strall(const char *str, bool (*f)(char));
+bool	ft_strnall(const char *str, bool (*f)(char), size_t n);
+bool	ft_strany(const char *str, bool (*f)(char));
+bool	ft_strnany(const char *str, bool (*f)(char), size_t n);
 
 void	ft_bzero(void *ptr, size_t n);
 void	*ft_memccpy(void *dest, const void *src, char c, size_t n);

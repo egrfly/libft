@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/08 03:26:18 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/08 06:15:44 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,6 @@ SRC_DIR :=		./src
 OBJ_DIR :=		./obj
 
 SRC_FILES :=	ft_abs.c \
-				ft_all.c \
-				ft_any.c \
-				ft_atoi.c \
 				ft_binary_tree_init.c \
 				ft_binary_tree_newnode.c \
 				ft_bzero.c \
@@ -37,7 +34,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_isspace.c \
 				ft_isupper.c \
 				ft_isxdigit.c \
-				ft_itoa.c \
+				ft_itostr.c \
 				ft_list_append.c \
 				ft_list_appendnode.c \
 				ft_list_clear.c \
@@ -77,6 +74,8 @@ SRC_FILES :=	ft_abs.c \
 				ft_putstr.c \
 				ft_split_destroy.c \
 				ft_split.c \
+				ft_strall.c \
+				ft_strany.c \
 				ft_strcat.c \
 				ft_strchr.c \
 				ft_strcmp.c \
@@ -90,17 +89,21 @@ SRC_FILES :=	ft_abs.c \
 				ft_strlcpy.c \
 				ft_strlen.c \
 				ft_strmapi.c \
+				ft_strnall.c \
+				ft_strnany.c \
 				ft_strncat.c \
 				ft_strncmp.c \
 				ft_strncpy.c \
 				ft_strndup.c \
 				ft_strnlen.c \
 				ft_strnstr.c \
+				ft_strntoi.c \
 				ft_strrange.c \
 				ft_strrchr.c \
 				ft_strspn.c \
 				ft_strstarts.c \
 				ft_strstr.c \
+				ft_strtoi.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \

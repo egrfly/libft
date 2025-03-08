@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strntoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 00:53:17 by emflynn           #+#    #+#             */
-/*   Updated: 2025/02/21 09:32:52 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/08 06:03:46 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "ft_ctype.h"
 #include "ft_defs.h"
 #include "ft_string.h"
 
-static bool	would_surpass_limit(int n, int next_digit, bool is_negative)
+static bool	would_surpass_limit(int nbr, int next_digit, bool is_negative)
 {
 	int	n_cutoff;
 	int	next_digit_cutoff;
@@ -38,33 +39,34 @@ static bool	would_surpass_limit(int n, int next_digit, bool is_negative)
 		n_cutoff = INT_MAX / 10;
 		next_digit_cutoff = INT_MAX % 10;
 	}
-	return (n > n_cutoff || (n == n_cutoff && next_digit > next_digit_cutoff));
+	return (nbr > n_cutoff || (nbr == n_cutoff && next_digit > next_digit_cutoff));
 }
 
-bool	ft_atoi(const char *nstr, int *n)
+bool	ft_strntoi(const char *nbr_str, int *nbr, size_t n)
 {
 	int		multiplier;
 	bool	has_digits;
+	size_t	i;
 
-	*n = 0;
+	*nbr = 0;
 	multiplier = 1;
 	has_digits = false;
-	nstr += ft_strspn(nstr, WHITESPACE);
-	if (*nstr == '+' || *nstr == '-')
+	i = ft_strspn(nbr_str, WHITESPACE);
+	if (i < n && (nbr_str[i] == '+' || nbr_str[i] == '-'))
 	{
-		if (*nstr == '-')
+		if (nbr_str[i] == '-')
 			multiplier = -1;
-		nstr++;
+		i++;
 	}
-	while (ft_isdigit(*nstr))
+	while (i < n && ft_isdigit(nbr_str[i]))
 	{
 		has_digits = true;
-		if (would_surpass_limit(*n, *nstr - '0', multiplier == -1))
+		if (would_surpass_limit(*nbr, nbr_str[i] - '0', multiplier == -1))
 			return (false);
-		*n = *n * 10 + *nstr - '0';
-		nstr++;
+		*nbr = *nbr * 10 + nbr_str[i] - '0';
+		i++;
 	}
-	nstr += ft_strspn(nstr, WHITESPACE);
-	*n *= multiplier;
-	return (!*nstr && has_digits);
+	i += ft_strspn(&nbr_str[i], WHITESPACE);
+	*nbr *= multiplier;
+	return ((i >= n || !nbr_str[i]) && has_digits);
 }
