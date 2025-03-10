@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 21:16:37 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 21:12:27 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/10 11:15:37 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_putchar_buffered(t_options *options, char c)
 		if (pos && !options->error)
 		{
 			chars_written = write(options->fd, buffer, pos);
+			pos = 0;
 			if (chars_written < 0)
 			{
 				options->error = true;
 				return ;
 			}
 		}
-		pos = 0;
 		if (options->flush)
 		{
 			options->flush = 0;
