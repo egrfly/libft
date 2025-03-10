@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/08 06:15:44 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/10 23:14:47 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_strstarts.c \
 				ft_strstr.c \
 				ft_strtoi.c \
+				ft_strtol.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \

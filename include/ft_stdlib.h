@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 06:01:07 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/10 23:16:32 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 bool				ft_strtoi(const char *nbr_str, int *nbr);
 bool				ft_strntoi(const char *nbr_str, int *nbr, size_t n);
+bool				ft_strtol(const char *nbr_str, long *nbr);
 char				*ft_itostr(int nbr);
 
 unsigned long long	ft_abs(long long n);
