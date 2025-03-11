@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 06:15:24 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/11 01:34:25 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memrchr(const void *ptr, char c, size_t n);
 void	*ft_memset(void *ptr, char c, size_t n);
 
+char	*ft_arrjoin(char **arr, const char *separator);
 char	**ft_split(const char *str, const char *set);
 void	ft_split_destroy(char ***splits);
 char	*ft_strcat(char *dest, const char *src);
