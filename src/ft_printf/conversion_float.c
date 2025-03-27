@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:46:00 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/22 18:22:08 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/27 23:32:03 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,21 @@ void	ft_convert_float_scientific(t_options *options,
 	point_length = (options->precision || options->flag_hash);
 	nbr_length = 1 + point_length + options->precision;
 	nonzero_decimal_places = ft_min(options->precision, nbr_b10->length - 1);
-	exponent_length = ft_max(ft_nbrlen_base(ft_abs(nbr_b10->exponent), 10), 2) + 2;
+	exponent_length = ft_max(ft_nbrlen_base(ft_abs(nbr_b10->exponent), 10), 2);
 	ft_set_float_precision_error(options, sign_length + 1 + point_length,
-		exponent_length);
+		exponent_length + 2);
 	if (options->error)
 		return ;
-	ft_prepend_spaces(options, sign_length, nbr_length + exponent_length);
+	ft_prepend_spaces(options, sign_length, nbr_length + exponent_length + 2);
 	ft_prepend_sign(options, nbr_b10->sign);
-	ft_prepend_zeros(options, sign_length, nbr_length + exponent_length);
+	ft_prepend_zeros(options, sign_length, nbr_length + exponent_length + 2);
 	ft_putnbr_capped(options, float_buffer, 1);
 	ft_putchars(options, '.', point_length);
 	ft_putnbr_capped(options, float_buffer + 1, nonzero_decimal_places);
 	ft_putchars(options, '0', options->precision - nonzero_decimal_places);
 	ft_putchar_case(options, 'e');
 	options->count += ft_dprintf(options->fd, "%+.2d", nbr_b10->exponent);
-	ft_append_spaces(options, sign_length, nbr_length + exponent_length);
+	ft_append_spaces(options, sign_length, nbr_length + exponent_length + 2);
 }
 
 static void	ft_convert_float_extended_decimal_only(t_options *options,
