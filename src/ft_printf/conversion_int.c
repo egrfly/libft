@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:46:32 by emflynn           #+#    #+#             */
-/*   Updated: 2023/12/06 22:22:41 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:59:00 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_convert_int(t_options *options, int64_t value)
 			&& !value);
 	sign_length = ft_sign_length(options, is_negative);
 	unsigned_value = ft_abs(value);
-	nbr_length = ft_nbrlen(unsigned_value, options->base);
+	nbr_length = ft_nbrlen_base(unsigned_value, options->base);
 	if (zero_value_zero_precision)
 		nbr_length = 0;
 	ft_set_int_precision_error(options, sign_length);

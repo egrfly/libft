@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/10 23:16:32 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:22:08 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ unsigned long long	ft_umin(unsigned long long n1, unsigned long long n2);
 
 void				*ft_calloc(size_t n, size_t size);
 
-size_t				ft_nbrlen(unsigned long long nbr, unsigned int base);
+size_t				ft_nbrlen_base(unsigned long long nbr, unsigned int base);
 
 #endif

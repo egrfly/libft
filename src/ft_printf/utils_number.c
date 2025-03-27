@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:49:18 by emflynn           #+#    #+#             */
-/*   Updated: 2023/12/06 22:24:14 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:59:38 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_uint_to_buffer(uint64_t nbr, char *buffer, int base)
 	int	remainder;
 
 	significant_digit_count = 0;
-	i = ft_nbrlen(nbr, base);
+	i = ft_nbrlen_base(nbr, base);
 	while (i--)
 	{
 		remainder = nbr % base;

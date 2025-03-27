@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:49:10 by emflynn           #+#    #+#             */
-/*   Updated: 2023/11/24 23:49:10 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:59:30 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	ft_integer_part_to_buffer(t_float_b10 *nbr_b10,
 				int unbiased_exponent_b2, char *float_buffer)
 {
 	ft_uint_to_buffer(nbr_b10->integer_part, float_buffer, 10);
-	nbr_b10->length = ft_nbrlen(nbr_b10->integer_part, 10);
+	nbr_b10->length = ft_nbrlen_base(nbr_b10->integer_part, 10);
 	while (unbiased_exponent_b2-- > C_BITS_UINT64_T - 1)
 		nbr_b10->exponent += ft_double_b10(float_buffer, &(nbr_b10->length));
 }
@@ -118,7 +118,7 @@ void	ft_float_to_buffer(t_float_b2 *nbr_b2, t_float_b10 *nbr_b10,
 			C_BITS_UINT64_T - (unbiased_exponent_b2 + 1));
 	nbr_b10->decimal_part = ft_shift_left_and_back(nbr_b2->parts.coefficient,
 			unbiased_exponent_b2 + 1);
-	nbr_b10->exponent = ft_nbrlen(nbr_b10->integer_part, 10) - 1;
+	nbr_b10->exponent = ft_nbrlen_base(nbr_b10->integer_part, 10) - 1;
 	nbr_b10->length = 0;
 	if (nbr_b10->integer_part)
 		ft_integer_part_to_buffer(nbr_b10, unbiased_exponent_b2, float_buffer);

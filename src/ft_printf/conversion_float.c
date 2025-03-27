@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:46:00 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 21:12:50 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:22:08 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_convert_float_scientific(t_options *options,
 	point_length = (options->precision || options->flag_hash);
 	nbr_length = 1 + point_length + options->precision;
 	nonzero_decimal_places = ft_min(options->precision, nbr_b10->length - 1);
-	exponent_length = ft_max(ft_nbrlen(ft_abs(nbr_b10->exponent), 10), 2) + 2;
+	exponent_length = ft_max(ft_nbrlen_base(ft_abs(nbr_b10->exponent), 10), 2) + 2;
 	ft_set_float_precision_error(options, sign_length + 1 + point_length,
 		exponent_length);
 	if (options->error)

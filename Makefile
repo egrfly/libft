@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/11 01:34:37 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/22 18:22:37 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ OBJ_DIR :=		./obj
 
 SRC_FILES :=	ft_abs.c \
 				ft_arrjoin.c \
+				ft_arrjoinlen.c \
 				ft_binary_tree_init.c \
 				ft_binary_tree_newnode.c \
 				ft_bzero.c \
@@ -64,7 +65,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_memrchr.c \
 				ft_memset.c \
 				ft_min.c \
-				ft_nbrlen.c \
+				ft_nbrlen_base.c \
 				ft_putchar_fd.c \
 				ft_putchar.c \
 				ft_putendl_fd.c \

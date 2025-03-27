@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:47:04 by emflynn           #+#    #+#             */
-/*   Updated: 2023/12/06 22:22:41 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:59:06 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_convert_uint(t_options *options, uint64_t value)
 			&& !options->precision
 			&& !value);
 	base_prefix_length = ft_base_prefix_length(options, nonzero_value);
-	nbr_length = ft_nbrlen(value, options->base);
+	nbr_length = ft_nbrlen_base(value, options->base);
 	if (zero_value_zero_precision)
 		nbr_length = 0;
 	ft_set_int_precision_error(options, base_prefix_length);

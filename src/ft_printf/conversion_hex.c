@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:46:20 by emflynn           #+#    #+#             */
-/*   Updated: 2024/07/02 21:13:02 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:58:49 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	ft_set_nbr_with_exponent_length_and_float_precision_error(
 	int	suffix_length;
 
 	ft_measure_prefix_and_point(options, nbr_b2, &prefix_length, &point_length);
-	suffix_length = 2 + ft_nbrlen(ft_abs(exponent), 10);
+	suffix_length = 2 + ft_nbrlen_base(ft_abs(exponent), 10);
 	*nbr_with_exponent_length = 1 + point_length + options->precision
 		+ suffix_length;
 	ft_set_float_precision_error(options, prefix_length + 1 + point_length,

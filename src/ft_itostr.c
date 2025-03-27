@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 10:57:39 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 06:00:46 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/22 18:58:37 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_putnbr_to_buffer(char *buffer, char *sign, unsigned int nbr)
 
 	ft_strcpy(buffer, sign);
 	sign_len = ft_strlen(sign);
-	nbr_len = ft_nbrlen(nbr, 10);
+	nbr_len = ft_nbrlen_base(nbr, 10);
 	buffer[sign_len + nbr_len] = '\0';
 	while (nbr_len > 0)
 	{
@@ -48,7 +48,7 @@ char	*ft_itostr(int nbr)
 		unsigned_nbr = nbr;
 	}
 	nbr_str = malloc(sizeof(char)
-			* (ft_strlen(sign) + ft_nbrlen(unsigned_nbr, 10) + 1));
+			* (ft_strlen(sign) + ft_nbrlen_base(unsigned_nbr, 10) + 1));
 	if (!nbr_str)
 		return (NULL);
 	ft_putnbr_to_buffer(nbr_str, sign, unsigned_nbr);
