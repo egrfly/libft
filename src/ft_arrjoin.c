@@ -6,11 +6,12 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 01:26:34 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/22 11:05:08 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/29 22:43:34 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stdlib.h"
 #include "ft_string.h"
 
 char	*ft_arrjoin(char **arr, const char *separator)
@@ -18,7 +19,7 @@ char	*ft_arrjoin(char **arr, const char *separator)
 	char	*join;
 	size_t	i;
 
-	join = malloc(sizeof(char) * (ft_arrjoinlen(arr, separator) + 1));
+	join = ft_calloc(ft_arrjoinlen(arr, separator) + 1, sizeof(char));
 	if (!join)
 		return (NULL);
 	if (arr[0])
