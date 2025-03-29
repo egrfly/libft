@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/22 18:22:37 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/29 19:53:22 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_list_removenode.c \
 				ft_list_shallowcopy.c \
 				ft_list_size.c \
+				ft_list_sort.c \
 				ft_list_splicenodes.c \
 				ft_max.c \
 				ft_memccpy.c \

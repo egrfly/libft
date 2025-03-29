@@ -6,7 +6,7 @@
 /*   By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:40:09 by emflynn           #+#    #+#             */
-/*   Updated: 2025/03/08 03:25:52 by emflynn          ###   ########.fr       */
+/*   Updated: 2025/03/29 19:54:15 by emflynn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void		ft_list_prependnode(t_list *list, t_list_node *node);
 void		ft_list_removenode(t_list *list, t_list_node *node);
 t_list		*ft_list_shallowcopy(t_list *list);
 size_t		ft_list_size(const t_list *list);
+void		ft_list_sort(t_list *list, int (*cmp)(const char *, const char *));
 void		ft_list_splicenodes(t_list_node *last_of_first_list,
 				t_list_node *first_of_second_list);
 
