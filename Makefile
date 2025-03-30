@@ -6,7 +6,7 @@
 #    By: emflynn <emflynn@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/14 11:47:12 by emflynn           #+#    #+#              #
-#    Updated: 2025/03/29 19:53:22 by emflynn          ###   ########.fr        #
+#    Updated: 2025/03/30 02:39:25 by emflynn          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC_FILES :=	ft_abs.c \
 				ft_list_append.c \
 				ft_list_appendnode.c \
 				ft_list_clear.c \
+				ft_list_deepcopy.c \
 				ft_list_delnode.c \
 				ft_list_destroy.c \
 				ft_list_init.c \
